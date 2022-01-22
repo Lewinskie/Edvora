@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Filters from "../components/Filters";
+import Filters from "../containers/Filters";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
