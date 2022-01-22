@@ -114,7 +114,7 @@ function ProductCard({ product }) {
     },
   });
   const card = useStyles();
-  //convert date to string
+  //shorten date string
   const date = product.date.slice(0, 10);
 
   return (
