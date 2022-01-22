@@ -5,9 +5,7 @@ import Alert from '@material-ui/lab/Alert';
 import Box from '@material-ui/core/Box';
 import categorizeByBrand from "../utils/categorizeByBrand";
 import Typography from "@material-ui/core/Typography";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Divider from "@material-ui/core/Divider";
 import ProductCard from "../components/ProductCard";
 import EdvoraTitle from "./EdvoraTitle";
 
@@ -25,30 +23,29 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         overflowY: "hidden",
     },
+    divider: {
+        backgroundColor: "rgba(203, 203, 203, 0.5)",
+        marginBottom: theme.spacing(3),
+        marginTop: theme.spacing(1)
+    }
 }));
 const EdvoraProducts = ({ products }) => {
   const classes = useStyles();
-  const settings = {
-    dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3
-  };
   return (
       <>
           <EdvoraTitle title="Edvora" subHeading="Products" />
           <Box mt={1}>
               {products.length > 0 ? categorizeByBrand(products).map(item => (
-                  <div key={item.brandName}>
+                  <div key={item.brandName} style={{ marginBottom: 40 }}>
                       <Typography className={classes.productsTitle} variant="h4">{item.brandName}</Typography>
+                      <Divider className={classes.divider} />
                       <Box className={classes.topProducts} mt={1} mb={1}>
                           {item.products.length > 0 ? (
-                              <Slider {...settings}>
+                              <>
                                   {item.products.map((product) => (
                                       <ProductCard product={product} key={product.date} />
                                   ))}
-                              </Slider>
+                              </>
                           ) : (
                               <Alert severity="warning" style={{ width: "100%" }}>Sorry we do not have any products in <strong>{item.brandName}</strong></Alert>
                           )}

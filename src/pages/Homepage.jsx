@@ -4,9 +4,6 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Filters from "../containers/Filters";
 import EdvoraProducts from "../containers/EdvoraProducts";
 
@@ -47,14 +44,6 @@ function Homepage() {
     setGridWidthState();
     fetchData();
   }, []);
-
-  const settings = {
-    dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3
-  };
   return (
     <Container maxWidth="lg" className={home.container}>
       {/* building container for filter section */}
@@ -66,37 +55,6 @@ function Homepage() {
         </Grid>
         <Grid item lg={9} xl={9} sm={9} xs={12}>
           <EdvoraProducts products={products} />
-          <div className={home.bottomProductsContainer}>
-          <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-          <div>
-            <h3>7</h3>
-          </div>
-          <div>
-            <h3>8</h3>
-          </div>
-          <div>
-            <h3>9</h3>
-          </div>
-        </Slider>
-          </div>
         </Grid>
       </Grid>
     </Container>
