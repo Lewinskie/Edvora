@@ -137,12 +137,9 @@ function ProductCard({ product }) {
       <div>
         <div style={{ display: "flex" }}>
           <Typography noWrap={true} className={card.location}>
-            Location
+            {product.state}
           </Typography>
-          <Typography noWrap={true} className={card.location}>
-            city:
-            {product.address.city} state:{product.address.state}
-          </Typography>
+
           <div style={{ display: "flex" }}>
             <Typography className={card.dateLabel}>Date:</Typography>
             <Typography className={card.date}>{date}</Typography>

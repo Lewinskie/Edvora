@@ -47,13 +47,13 @@ function Homepage() {
   return (
     <Container maxWidth="lg" className={home.container}>
       {/* building container for filter section */}
-      <Grid container spacing={1}>
+      <Grid container spacing={3}>
         <Grid item lg={3} xl={3} sm={3} xs={12} ref={ref}>
           <div className={home.gridLeft}>
-            <Filters products={products} width={leftDivWidth} />
+            <Filters products={products} width="100%" />
           </div>
         </Grid>
-        <Grid item lg={9} xl={9} sm={9} xs={12}>
+        <Grid item lg={9} xl={9} sm={9} xs={12} style={{ paddingLeft: 20 }}>
           <EdvoraProducts products={products} />
         </Grid>
       </Grid>
